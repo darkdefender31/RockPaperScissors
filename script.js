@@ -15,49 +15,34 @@ function computerPlay(){
     }
 }
 
-// let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
-// let playerSelection = playerPromptAnswer.toLowerCase();
-// let computerSelection = computerPlay();
-
-function playRound(playerSelection, computerSelection){
-    //Prompt user to type in rock, paper or scissor.
-    //make it case-insensitvie what the user types in.
-    //make sure users only type in variations of rock, paper
-    //or scissors.
-    //This will be playerSelection value
-    //Get return value of computerPlay and bring it
-    //into this function.
-    //This will be computer Selection value
-
-    //Put the rules of rock paper scissors in if statements.
-    //return a string that declares the winner
-if(playerSelection === 'rock' || 'paper' || 'scissors'){
-    if(playerSelection === 'rock' && computerSelection === 'scissors'){
-        return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
-        }
-    if(playerSelection === 'scissors' && computerSelection === 'rock'){
-            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
-        }
-    if(playerSelection === 'scissors' && computerSelection === 'paper'){
-            return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
-        }
-    if(playerSelection === 'paper' && computerSelection === 'scissors'){
-            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
-        }
-    if(playerSelection === 'paper' && computerSelection === 'rock'){
-            return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
-        }
-    if(playerSelection === 'rock' && computerSelection === 'paper'){
-            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
-        }
-    if(playerSelection === computerSelection){
-        return `it's a tie! ${playerSelection} matches ${computerSelection}`
-        }
-    }
-if(playerSelection !== 'rock' || 'paper' || 'scissors'){
-    console.log('please enter rock paper or scissors');
-    }
-}
+// function playRound(playerSelection, computerSelection){
+// if(playerSelection === 'rock' || 'paper' || 'scissors'){
+//     if(playerSelection === 'rock' && computerSelection === 'scissors'){
+//         return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
+//         }
+//     if(playerSelection === 'scissors' && computerSelection === 'rock'){
+//             return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+//         }
+//     if(playerSelection === 'scissors' && computerSelection === 'paper'){
+//             return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
+//         }
+//     if(playerSelection === 'paper' && computerSelection === 'scissors'){
+//             return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+//         }
+//     if(playerSelection === 'paper' && computerSelection === 'rock'){
+//             return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
+//         }
+//     if(playerSelection === 'rock' && computerSelection === 'paper'){
+//             return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+//         }
+//     if(playerSelection === computerSelection){
+//         return `it's a tie! ${playerSelection} matches ${computerSelection}`
+//         }
+//     }
+// if(playerSelection !== 'rock' || 'paper' || 'scissors'){
+//     console.log('please enter rock paper or scissors');
+//     }
+// }
 
 let computerScore = 0;
 let playerScore = 0;
