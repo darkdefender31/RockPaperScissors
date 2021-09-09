@@ -15,12 +15,11 @@ function computerPlay(){
     }
 }
 
-let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
-let playerSelection = playerPromptAnswer.toLowerCase();
-let computerSelection = computerPlay();
+// let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
+// let playerSelection = playerPromptAnswer.toLowerCase();
+// let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection){
-    console.log(playerSelection, computerSelection);
     //Prompt user to type in rock, paper or scissor.
     //make it case-insensitvie what the user types in.
     //make sure users only type in variations of rock, paper
@@ -32,9 +31,94 @@ function playRound(playerSelection, computerSelection){
 
     //Put the rules of rock paper scissors in if statements.
     //return a string that declares the winner
-if(playerSelection !== 'rock' || 'paper' || 'scissors'){
+if(playerSelection === 'rock' || 'paper' || 'scissors'){
     if(playerSelection === 'rock' && computerSelection === 'scissors'){
-        return `Congrats, ${playerSelection} beats ${computerSelection}`
+        return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
         }
+    if(playerSelection === 'scissors' && computerSelection === 'rock'){
+            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+        }
+    if(playerSelection === 'scissors' && computerSelection === 'paper'){
+            return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
+        }
+    if(playerSelection === 'paper' && computerSelection === 'scissors'){
+            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+        }
+    if(playerSelection === 'paper' && computerSelection === 'rock'){
+            return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
+        }
+    if(playerSelection === 'rock' && computerSelection === 'paper'){
+            return `Sorry, computer chose ${computerSelection} and it beats ${playerSelection}`
+        }
+    if(playerSelection === computerSelection){
+        return `it's a tie! ${playerSelection} matches ${computerSelection}`
+        }
+    }
+if(playerSelection !== 'rock' || 'paper' || 'scissors'){
+    console.log('please enter rock paper or scissors');
+    }
+}
+
+let computerScore = 0;
+let playerScore = 0;
+
+
+function game(){
+    computerScore = 0;
+    playerScore = 0;
+
+    for(let i = 0; i < 5; i++){
+
+        let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
+        let playerSelection = playerPromptAnswer.toLowerCase();
+        let computerSelection = computerPlay();
+
+
+        if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
+            if(playerSelection === 'rock' && computerSelection === 'scissors'){
+                console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                playerScore++;
+                }
+            if(playerSelection === 'scissors' && computerSelection === 'rock'){
+                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                computerScore++;
+                }
+            if(playerSelection === 'scissors' && computerSelection === 'paper'){
+                    console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                playerScore++;
+                }
+            if(playerSelection === 'paper' && computerSelection === 'scissors'){
+                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                computerScore++;
+                }
+            if(playerSelection === 'paper' && computerSelection === 'rock'){
+                    console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                playerScore++;
+                }
+            if(playerSelection === 'rock' && computerSelection === 'paper'){
+                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                computerScore++;
+                }
+            if(playerSelection === computerSelection){
+                console.log(`it's a tie! ${playerSelection} matches ${computerSelection}`)
+                }
+            } else {
+            console.log('please enter rock paper or scissors');
+            break;
+            }
+    }
+
+    return finalScore()
+}
+
+function finalScore(){
+    if(computerScore < playerScore){
+        console.log('Well done on getting the most points out of the 5 game round against the Computer')
+        console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
+    } else if(playerScore < computerScore){
+        console.log('Sorry the Computer won the most points out of the 5 game round')
+        console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
+    } else{
+        console.log(`it's a tie, your score ${playerScore} and the Computer's score ${computerScore}`)
     }
 }
