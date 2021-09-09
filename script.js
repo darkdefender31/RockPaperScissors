@@ -16,7 +16,7 @@ function computerPlay(){
 }
 
 // function playRound(playerSelection, computerSelection){
-// if(playerSelection === 'rock' || 'paper' || 'scissors'){
+// if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
 //     if(playerSelection === 'rock' && computerSelection === 'scissors'){
 //         return `Congrats, ${playerSelection} beats computer choosing ${computerSelection}`
 //         }
@@ -38,9 +38,9 @@ function computerPlay(){
 //     if(playerSelection === computerSelection){
 //         return `it's a tie! ${playerSelection} matches ${computerSelection}`
 //         }
-//     }
-// if(playerSelection !== 'rock' || 'paper' || 'scissors'){
+//     }else {
 //     console.log('please enter rock paper or scissors');
+//     break;
 //     }
 // }
 
