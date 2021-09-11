@@ -23,4 +23,9 @@ Stage 4
 -Write a NEW function called game() and use the previous function 
 inside of this one to play a 5 round game. [x]
 -Calculator who wins each round. [x]
--Create a seperate function to showcase the winning. [x]
+-Create a seperate function to showcase the winner. [x]
+
+Stage 5
+-Put a button to start the game function. [x]
+-Instead of prompt put a selection for rock, paper or scissors. []
+

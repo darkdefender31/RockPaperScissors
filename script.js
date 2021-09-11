@@ -1,3 +1,9 @@
+let computerScore = 0;
+let playerScore = 0;
+
+const play5gameround = document.getElementById('playGame');
+play5gameround.addEventListener('click', game);
+
 function computerPlay(){
     //Pick random 3 numbers
     let randNum = Math.floor(Math.random() * 3);
@@ -43,10 +49,6 @@ function computerPlay(){
 //     break;
 //     }
 // }
-
-let computerScore = 0;
-let playerScore = 0;
-
 
 function game(){
     computerScore = 0;
