@@ -1,0 +1,4 @@
+Stage 1
+-Create playerPlay function. [x]
+-Create 3 options in HTML. [x]
+-When someone hits the submit button console.log the selection. [x]

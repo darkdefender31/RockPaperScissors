@@ -4,6 +4,10 @@ let playerScore = 0;
 const play5gameround = document.getElementById('playGame');
 play5gameround.addEventListener('click', game);
 
+let playerSelection = document.querySelectorAll('input[type=radio]');
+const submitSelection = document.getElementById('submitButton');
+submitSelection.addEventListener('click', playerPlay);
+
 function computerPlay(){
     //Pick random 3 numbers
     let randNum = Math.floor(Math.random() * 3);
@@ -20,6 +24,18 @@ function computerPlay(){
         return 'paper';
     }
 }
+
+function playerPlay(){
+    for(let i = 0; i < playerSelection.length; i++){
+            if(playerSelection[i].checked === true){
+                // if the playerSelection is checked.
+                // console.log the name of the one that is checked.
+                console.log(playerSelection[i].value)
+            }
+        }
+    }
+
+
 
 // function playRound(playerSelection, computerSelection){
 // if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
