@@ -2,3 +2,6 @@ Stage 1
 -Create playerPlay function. [x]
 -Create 3 options in HTML. [x]
 -When someone hits the submit button console.log the selection. [x]
+
+Stage 2
+-Make it so when you select play 5 rounds it waits for you to select your answer then carries on with the loop [x]

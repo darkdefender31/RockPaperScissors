@@ -3,8 +3,7 @@ let playerScore = 0;
 
 const play5gameround = document.getElementById('playGame');
 play5gameround.addEventListener('click', game);
-
-let playerSelection = document.querySelectorAll('input[type=radio]');
+let playerChoice = document.querySelectorAll('input[type=radio]');
 const submitSelection = document.getElementById('submitButton');
 submitSelection.addEventListener('click', playerPlay);
 
@@ -26,16 +25,16 @@ function computerPlay(){
 }
 
 function playerPlay(){
-    for(let i = 0; i < playerSelection.length; i++){
-            if(playerSelection[i].checked === true){
+    for(let i = 0; i < playerChoice.length; i++){
+            if(playerChoice[i].checked === true){
                 // if the playerSelection is checked.
                 // console.log the name of the one that is checked.
-                console.log(playerSelection[i].value)
+                console.log(playerChoice[i].value);
             }
         }
     }
 
-
+let test = playerPlay()
 
 // function playRound(playerSelection, computerSelection){
 // if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
@@ -72,8 +71,9 @@ function game(){
 
     for(let i = 0; i < 5; i++){
 
-        let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
-        let playerSelection = playerPromptAnswer.toLowerCase();
+        // let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
+        // let playerSelection = playerPromptAnswer.toLowerCase();
+        let playerSelection = test;
         let computerSelection = computerPlay();
 
 
