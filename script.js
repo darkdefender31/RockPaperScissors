@@ -4,8 +4,9 @@ let playerScore = 0;
 const play5gameround = document.getElementById('playGame');
 play5gameround.addEventListener('click', game);
 let playerChoice = document.querySelectorAll('input[type=radio]');
-const submitSelection = document.getElementById('submitButton');
-submitSelection.addEventListener('click', playerPlay);
+let containerResult = document.getElementById('result-container');
+// const submitSelection = document.getElementById('submitButton');
+// submitSelection.addEventListener('click', playerPlay);
 
 function computerPlay(){
     //Pick random 3 numbers
@@ -30,11 +31,10 @@ function playerPlay(){
                 // if the playerSelection is checked.
                 // console.log the name of the one that is checked.
                 console.log(playerChoice[i].value);
+                return playerChoice[i].value;
             }
         }
     }
-
-let test = playerPlay()
 
 // function playRound(playerSelection, computerSelection){
 // if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
@@ -66,62 +66,78 @@ let test = playerPlay()
 // }
 
 function game(){
-    computerScore = 0;
-    playerScore = 0;
-
-    for(let i = 0; i < 5; i++){
 
         // let playerPromptAnswer = prompt('Rock, Paper or Scissors?')
         // let playerSelection = playerPromptAnswer.toLowerCase();
-        let playerSelection = test;
+
+        let playerSelection = playerPlay();
         let computerSelection = computerPlay();
 
 
         if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors'){
             if(playerSelection === 'rock' && computerSelection === 'scissors'){
                 console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                let playerWinnerR = `Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`;
                 playerScore++;
+                return showResult(playerWinnerR);
                 }
             if(playerSelection === 'scissors' && computerSelection === 'rock'){
-                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                let computerWinnerR = `Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`;
                 computerScore++;
+                return showResult(computerWinnerR);
                 }
             if(playerSelection === 'scissors' && computerSelection === 'paper'){
-                    console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                let playerWinnerS = `Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`;
                 playerScore++;
+                return showResult(playerWinnerS);
                 }
             if(playerSelection === 'paper' && computerSelection === 'scissors'){
-                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                let computerWinnerS = `Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`;
                 computerScore++;
+                return showResult(computerWinnerS);
                 }
             if(playerSelection === 'paper' && computerSelection === 'rock'){
-                    console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                console.log(`Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`)
+                let playerWinnerP = `Congrats, ${playerSelection} beats Computer choosing ${computerSelection}`;
                 playerScore++;
+                return showResult(playerWinnerP);
                 }
             if(playerSelection === 'rock' && computerSelection === 'paper'){
-                    console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                console.log(`Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`)
+                let computerWinnerP = `Sorry, Computer chose ${computerSelection} and it beats ${playerSelection}`;
                 computerScore++;
+                return showResult(computerWinnerP);
                 }
             if(playerSelection === computerSelection){
                 console.log(`it's a tie! ${playerSelection} matches ${computerSelection}`)
+                let tie = `it's a tie! ${playerSelection} matches ${computerSelection}`;
+                return showResult(tie);
                 }
-            } else {
-            console.log('please enter rock paper or scissors');
-            break;
-            }
-    }
+            } //else {
+            // console.log('please enter rock paper or scissors');
+            // }
 
-    return finalScore()
+    // return finalScore()
 }
 
-function finalScore(){
-    if(computerScore < playerScore){
-        console.log('Well done on getting the most points out of the 5 game round against the Computer')
-        console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
-    } else if(playerScore < computerScore){
-        console.log('Sorry the Computer won the most points out of the 5 game round')
-        console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
-    } else{
-        console.log(`it's a tie, your score ${playerScore} and the Computer's score ${computerScore}`)
-    }
+function showResult(winner){
+    let createResult = document.createElement('p');
+    containerResult.appendChild(createResult);
+    createResult.innerText = winner;
+
 }
+
+// function finalScore(){
+//     if(computerScore < playerScore){
+//         console.log('Well done on getting the most points out of the 5 game round against the Computer')
+//         console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
+//     } else if(playerScore < computerScore){
+//         console.log('Sorry the Computer won the most points out of the 5 game round')
+//         console.log(`Your score ${playerScore} and the Computer's score ${computerScore}`)
+//     } else{
+//         console.log(`it's a tie, your score ${playerScore} and the Computer's score ${computerScore}`)
+//     }
+// }

@@ -4,4 +4,9 @@ Stage 1
 -When someone hits the submit button console.log the selection. [x]
 
 Stage 2
--Make it so when you select play 5 rounds it waits for you to select your answer then carries on with the loop [x]
+-Make it so when you select play 5 rounds it waits for you to select your answer then carries on with the loop. [ ]
+
+Stage 3
+-Decided to make it so you just play 1 round [x]
+-Need to append the results of who won the round into HTML [x]
+-Need to only append 5 and then show who won best of 5 [ ]
