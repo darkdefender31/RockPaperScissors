@@ -128,6 +128,22 @@ function showResult(winner){
     containerResult.appendChild(createResult);
     createResult.innerText = winner;
 
+    if(computerScore === 3){
+        containerResult.innerText = "";
+        containerResult.appendChild(createResult)
+        createResult.innerText = `The Computer has won out of 5. Computer Score:${computerScore} Player Score:${playerScore}`;
+        computerScore = 0;
+        playerScore = 0;
+    }
+
+    if(playerScore === 3){
+        containerResult.innerText = "";
+        containerResult.appendChild(createResult)
+        createResult.innerText = `Congrats you won! Player Score:${playerScore} Computer Score:${computerScore}`;
+        computerScore = 0;
+        playerScore = 0;
+    }
+
 }
 
 // function finalScore(){
